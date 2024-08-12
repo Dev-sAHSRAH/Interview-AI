@@ -34,7 +34,7 @@ function AddNewInterview() {
   const onSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const InputPrompt = `Job Position: ${jobPosition}\nJob description: ${jobDesc}\nYears of Experience: ${jobExp}\nDepending on this information, give me ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions with answers in JSON format.\nGive question and answers as field in JSON\n`;
+    const InputPrompt = `Job Position: ${jobPosition}\nJob description: ${jobDesc}\nYears of Experience: ${jobExp}\nDepending on this information, give me ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions with answers in JSON format.\nGive question and answer as field in JSON\n example [{question:...,answer...:},{question:...,answer...:}]`;
     const result = await chatSession.sendMessage(InputPrompt);
     const mockJsonResponse = result.response
       .text()
